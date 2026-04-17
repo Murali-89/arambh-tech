@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NexGen Solutions — Software &amp; Training</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <!-- ── Stylesheet ───────────────────────────────────────── -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- ── Vue 3 CDN (Global Build) ─────────────────────────── -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+
+  <!-- ── Firebase CDN (ES Module) ─────────────────────────── -->
+  <script type="module">
+    import { initializeApp }
+      from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp }
+      from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    /* ╔══════════════════════════════════════════════════╗
+       ║  🔧  REPLACE WITH YOUR FIREBASE PROJECT CONFIG  ║
+       ╚══════════════════════════════════════════════════╝ */
+const firebaseConfig = {
+  apiKey: "AIzaSyB8zg8UaLM9EJ8039LrhdnaQDMC2hVHvMQ",
+  authDomain: "arambh-technologies.firebaseapp.com",
+  projectId: "arambh-technologies",
+  storageBucket: "arambh-technologies.firebasestorage.app",
+  messagingSenderId: "705669563272",
+  appId: "1:705669563272:web:b3ebfc206f8c3974c6703d"
+};
+
+    const app = initializeApp(firebaseConfig);
+    const db  = getFirestore(app);
+
+    /* Expose to app.js (Vue global-build runs in same window) */
+    window.__firebaseDb       = db;
+    window.__firestoreHelpers = { collection, addDoc, serverTimestamp };
+  </script>
+</head>
+
+<body>
+  <!-- ── Vue Mount Point ───────────────────────────────────── -->
+  <div id="app"></div>
+
+  <!-- ── App Logic (all Vue components + data) ─────────────── -->
+  <script src="app.js"></script>
+</body>
+</html>
