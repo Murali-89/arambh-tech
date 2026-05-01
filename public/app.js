@@ -205,9 +205,9 @@ const DATA = {
   ],
 
   contactInfo: [
-    { icon: '📍', label: 'Address',  value: 'Your Area, Bengaluru, Karnataka 560001', sub: 'Visit us at our office' },
-    { icon: '📞', label: 'Phone',    value: '+91 XXXXX XXXXX',              sub: 'Mon–Sat, 9 AM – 6 PM'     },
-    { icon: '✉️', label: 'Email',    value: 'hello@arambhtech.in',          sub: 'We reply within 24 hours'  },
+    { icon: '📍', label: 'Address',  value: 'kowdenahalli Akshay nagar rammurthy nagar, Karnataka 560016', sub: 'Visit us at our office' },
+    { icon: '📞', label: 'Phone',    value: '+91 8050225964',              sub: 'Mon–Sat, 9 AM – 6 PM'     },
+    { icon: '✉️', label: 'Email',    value: 'murali.karpi@gmail.com',          sub: 'We reply within 24 hours'  },
   ],
 
   values: [
