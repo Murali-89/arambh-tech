@@ -23,6 +23,9 @@
     import { getFirestore, collection, addDoc, serverTimestamp }
       from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
+      import { getAnalytics } 
+    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+
     /* ╔══════════════════════════════════════════════════╗
        ║  🔧  REPLACE WITH YOUR FIREBASE PROJECT CONFIG  ║
        ╚══════════════════════════════════════════════════╝ */
@@ -32,15 +35,19 @@ const firebaseConfig = {
   projectId: "arambh-technologies",
   storageBucket: "arambh-technologies.firebasestorage.app",
   messagingSenderId: "705669563272",
-  appId: "1:705669563272:web:b3ebfc206f8c3974c6703d"
+  appId: "1:705669563272:web:b3ebfc206f8c3974c6703d",
+  // Important: Ensure you add your measurementId here [cite: 9, 11, 26]
+  measurementId: "G-NT7WGMTDT4"
 };
 
     const app = initializeApp(firebaseConfig);
     const db  = getFirestore(app);
+    const analytics = getAnalytics(app);
 
     /* Expose to app.js (Vue global-build runs in same window) */
     window.__firebaseDb       = db;
     window.__firestoreHelpers = { collection, addDoc, serverTimestamp };
+    window.__firebaseAnalytics = analytics;
   </script>
 </head>
 
